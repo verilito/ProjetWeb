@@ -49,7 +49,6 @@ class App extends React.Component {
           <ItemsList items={searchResults} />
           <Item startMovie={this.updateMovie} />
           <Widget1 movie={searchMovie} />
-
         </Content>
       </>
     );

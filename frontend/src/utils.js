@@ -7,6 +7,7 @@ export async function itunesApiRequest(term) {
         term,
         media: 'movie',
     };
+
     try {
         url.search = new URLSearchParams(params);
         const response = await fetch(url);

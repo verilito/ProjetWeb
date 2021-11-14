@@ -14,5 +14,4 @@ const ItemsList = ({ items }) => {
 	return <Liste>{itemsArray}</Liste>;
 };
 
-
 export default ItemsList;

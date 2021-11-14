@@ -9,8 +9,9 @@ const Liste = styled.div`
 	padding-top: 200px;
 `;
 const Widget1 = ({ movie }) => {
-    const itemsArray = movie.map((item, index) => <Item key={index} {...item} />);
-    return <Liste>{itemsArray}</Liste>;
+	const itemsArray = movie.map((item, index) => <Item key={index} {...item} />);
+
+	return <Liste>{itemsArray}</Liste>;
 };
 
 export default Widget1;

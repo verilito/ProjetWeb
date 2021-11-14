@@ -1,6 +1,5 @@
 /**
  * Color palette
- * Inspired by google-material-color
  */
 
 const palette = {

@@ -9,6 +9,7 @@ const Content = styled.div`
 	background-color: ${Palette('Primary')};
 `;
 
+
 const Title = styled.h2`
 	margin: 5px 0 0;
 	text-align: center;
@@ -36,7 +37,7 @@ const Button = styled.button`
 const Input = styled.input`
 	height: 25px;
 	margin: 0 2em;
-	padding: 0 2em;
+	padding: 0 3em;
 	background-color: ${Palette('Primary', 'dark')};
 	border-radius: 1em;
 	color: ${Palette('White')};
