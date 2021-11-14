@@ -25,11 +25,12 @@ const CardText = styled.div`
 `;
 
 function startMovie(trackId) {
+
     return trackId;
 }
 const Item = ({ kind, trackId, artistName, trackName, artworkUrl100 }) => (
 
-    <Card onClick={() => startMovie(trackId)}>
+    <Card onClick={() => window.location.href = "https://www.google.com"}>
 
         <div>{kind}</div>
         <div>{trackId}</div>
