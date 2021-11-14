@@ -23,22 +23,29 @@ const CardText = styled.div`
 	overflow: hidden;
 	text-overflow: ellipsis;
 `;
-function startMovie(trackId) {
-    return trackId;
+
+class Item extends React.Component {
+    constructor(trackId, artworkUrl100) {
+        this.trackId = trackId;
+        this.artworkUrl100 = artworkUrl100;
+
+    }
+
+    render() {
+        const { startMovie } = this.props;
+        const { trackId } = this.state;
+        return (
+            <Card onClick={() => { startMovie(trackId) }}>
+
+                <div>{trackId}</div>
+                <div>
+                    <img src={artworkUrl100} />
+                </div>
+            </Card>
+
+
+        );
+    }
 }
-const Item = ({ kind, trackId, artistName, trackName, artworkUrl100 }) => (
-
-    <Card onClick={() => { startMovie(trackId) }}>
-
-        <div>{kind}</div>
-        <div>{trackId}</div>
-        <CardText>{artistName}</CardText>
-        <CardText>{trackName}</CardText>
-        <div>
-            <img src={artworkUrl100} />
-        </div>
-    </Card>
-
-);
 
 export default Item;
