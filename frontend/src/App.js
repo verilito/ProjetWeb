@@ -19,6 +19,7 @@ const Content = styled.div`
 	width: 100%;
 	height: 100%;
 `;
+//  <Widget1 startMovie={this.updateMovie} movie={searchMovie} />
 
 class App extends React.Component {
   constructor(props) {
@@ -36,7 +37,8 @@ class App extends React.Component {
   async updateMovie(trackId) {
     const response2 = await itunesApiRequest(trackId);
     console.log("2");
-    this.setState({ searchMovie: response2.results });
+    console.log(response2.results);
+    //this.setState({ searchMovie: response2.results });
   }
   render() {
     const { searchResults } = this.state;
@@ -49,8 +51,7 @@ class App extends React.Component {
         <Content>
           <Header startSearch={this.updateSearch} />
           <ItemsList items={searchResults} />
-          <Widget1 startMovie={this.updateMovie}
-            movie={searchMovie} />
+
         </Content>
       </>
     );
