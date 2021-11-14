@@ -23,10 +23,12 @@ const CardText = styled.div`
 	overflow: hidden;
 	text-overflow: ellipsis;
 `;
-
+function startMovie(trackId) {
+    return trackId;
+}
 const Item = ({ kind, trackId, artistName, trackName, artworkUrl100 }) => (
 
-    <Card onClick={() => { return trackId }}>
+    <Card onClick={() => { startMovie(trackId) }}>
 
         <div>{kind}</div>
         <div>{trackId}</div>
