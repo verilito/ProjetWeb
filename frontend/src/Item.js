@@ -27,7 +27,7 @@ const CardText = styled.div`
 
 const Item = ({ trackId, artworkUrl100 }) => (
 
-    <Card onClick={() => startMovie(trackId)}>
+    <Card onClick={() => startSearch(trackId)}>
 
         <div>{trackId}</div>
         <div>
