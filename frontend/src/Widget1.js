@@ -6,11 +6,10 @@ const Liste = styled.div`
 	display: flex;
 	flex-wrap: wrap;
 	flex: 0 1 auto;
-	padding-top: 200px;
+	padding-top: 500px;
 `;
 const Widget1 = ({ movie }) => {
 	const itemsArray = movie.map((item, index) => <Item key={index} {...item} />);
-
 	return <Liste>{itemsArray}</Liste>;
 };
 

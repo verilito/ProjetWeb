@@ -35,7 +35,6 @@ class App extends React.Component {
   }
   async updateMovie(trackId) {
     const response2 = await itunesApiRequest(trackId);
-    console.log("enfin");
     this.setState({ searchMovie: response2.results });
   }
   render() {
@@ -48,8 +47,8 @@ class App extends React.Component {
         <Content>
           <Header startSearch={this.updateSearch} />
           <ItemsList items={searchResults} />
-          <Item startMovie={this.updateMovie} />
-          <Widget1 movie={searchMovie} />
+          <Widget1 startMovie={this.updateMovie} movie={searchMovie} />
+
         </Content>
       </>
     );

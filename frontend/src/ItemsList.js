@@ -9,6 +9,7 @@ const Liste = styled.div`
 	padding-top: 100px;
 `;
 
+
 const ItemsList = ({ items }) => {
 	const itemsArray = items.map((item, index) => <Item key={index} {...item} />);
 	return <Liste>{itemsArray}</Liste>;
