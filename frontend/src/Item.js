@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Palette from './palette';
 
 const Card = styled.button`
-height: 400px;
+height: 200px;
   width: 150px;
   display: flex;
   flex-direction: column;
@@ -23,17 +23,16 @@ const CardText = styled.div`
 	overflow: hidden;
 	text-overflow: ellipsis;
 `;
-function startMovie(trackId) {
+function startMovie() {
+    const trackId = document.getElementById('trackId').innerHTML;
+    console.log(trackId);
     return trackId;
 }
-const Item = ({ kind, trackId, artistName, trackName, artworkUrl100 }) => (
+const Item = ({ trackId, artworkUrl100 }) => (
 
-    <Card onClick={() => { startMovie(trackId) }}>
+    <Card onClick={() => { startMovie() }}>
 
-        <div>{kind}</div>
-        <div>{trackId}</div>
-        <CardText>{artistName}</CardText>
-        <CardText>{trackName}</CardText>
+        <div id='trackId'>{trackId}</div>
         <div>
             <img src={artworkUrl100} />
         </div>

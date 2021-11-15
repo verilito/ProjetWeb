@@ -31,7 +31,6 @@ class App extends React.Component {
 
   async updateSearch(text) {
     const response = await itunesApiRequest(text);
-    console.log("1");
     this.setState({ searchResults: response.results });
   }
   async updateMovie(trackId) {
@@ -42,7 +41,6 @@ class App extends React.Component {
   render() {
     const { searchResults } = this.state;
     const { searchMovie } = this.state;
-
 
     return (
       <>
