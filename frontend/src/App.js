@@ -37,6 +37,7 @@ class App extends React.Component {
     const response2 = await itunesApiRequest(trackId);
     this.setState({ searchMovie: response2.results });
   }
+
   render() {
     const { searchResults } = this.state;
     const { searchMovie } = this.state;
@@ -46,7 +47,8 @@ class App extends React.Component {
         <GlobalStyle />
         <Content>
           <Header startSearch={this.updateSearch} />
-          <ItemsList items={searchResults} />
+          <ItemsList items={searchResults} startMovie={this.updateMovie} />
+          <Widget1 movie={searchMovie} />
 
         </Content>
       </>

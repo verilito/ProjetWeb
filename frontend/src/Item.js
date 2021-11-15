@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Palette from './palette';
 
-const Card = styled.button`
+const Card = styled.div`
 height: 200px;
   width: 150px;
   display: flex;
@@ -24,17 +24,26 @@ const CardText = styled.div`
 	text-overflow: ellipsis;
 `;
 
+class Item extends React.Component {
 
-const Item = ({ trackId, artworkUrl100 }) => (
+    render() {
+        const { trackId } = this.props;
+        // const { artworkUrl100 } = this.props;
+        /* <div>
+                     <img src={artworkUrl100} />
+                 </div>*/
+        const { startMovie } = this.props;
 
-    <Card onClick={() => startSearch(trackId)}>
+        return (
 
-        <div>{trackId}</div>
-        <div>
-            <img src={artworkUrl100} />
-        </div>
-    </Card>
+            <Card onClick={() => startMovie(trackId)}>
 
-);
+                <div>{trackId}</div>
+
+            </Card>
+
+        );
+    }
+}
 
 export default Item;
