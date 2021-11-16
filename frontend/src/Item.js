@@ -28,17 +28,19 @@ class Item extends React.Component {
 
     render() {
         const { trackId } = this.props;
-        // const { artworkUrl100 } = this.props;
-        /* <div>
-                     <img src={artworkUrl100} />
-                 </div>*/
-        const { startMovie } = this.props;
-
+        const { artworkUrl100 } = this.props;
+        function startMovie(trackId) {
+            console.log(trackId);
+            return trackId;
+        }
         return (
 
-            <Card onClick={() => startMovie(trackId)}>
+            <Card onClick={() => { startMovie(trackId) }}>
 
                 <div>{trackId}</div>
+                <div>
+                    <img src={artworkUrl100} />
+                </div>
 
             </Card>
 
