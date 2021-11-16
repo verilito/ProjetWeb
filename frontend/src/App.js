@@ -97,5 +97,5 @@ class App extends Component {
 
   // } // END CLASS - APP
 }
-module.exports = App;
+//module.exports = App;
 export default App;
