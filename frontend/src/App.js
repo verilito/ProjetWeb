@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import SearchBox from './search';
-import Card from './card';
+import SearchBox from './Search';
+import Card from './Card';
+import $ from 'jquery';
 
 class App extends Component {
   constructor(props) {
@@ -57,6 +58,7 @@ class App extends Component {
     this.fetchApi(url)
 
     //========================= BLOODHOUND ==============================//
+    var Bloodhound = require('bloodhound-js');
     let suggests = new Bloodhound({
       datumTokenizer: function (datum) {
         return Bloodhound.tokenizers.whitespace(datum.value);
@@ -96,3 +98,4 @@ class App extends Component {
   // } // END CLASS - APP
 }
 module.exports = App;
+export default App;
