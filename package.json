@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "bloodhound-js": "^1.2.3"
+    "bloodhound-js": "^1.2.3",
+    "jquery": "^3.6.0"
   }
 }

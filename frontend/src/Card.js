@@ -84,4 +84,4 @@ function nestedDataToString(nestedData) {
     resultString = nestedArray.join(', '); // array to string
     return resultString;
 };
-module.exports = Card;
+export default Card;

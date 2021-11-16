@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 const TMDBLogo = "./images/tmdb.svg";
 
-class SearchBox extends Component {
+class Search extends Component {
     handleChange(event) {
         event.target.select();
     }
@@ -38,4 +38,4 @@ class SearchBox extends Component {
         );
     }
 }
-module.exports = SearchBox;
+export default Search;
