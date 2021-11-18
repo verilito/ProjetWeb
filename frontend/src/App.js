@@ -4,7 +4,6 @@ import Card from './Card';
 import $ from 'jquery';
 import "typeahead.js";
 
-
 class App extends Component {
   constructor(props) {
     super(props)
@@ -48,12 +47,12 @@ class App extends Component {
 
     // .catch((err) => console.log('Movie not found!'))
 
-  } // end function
+  }
 
   fetchMovieID(movieID) {
     let url = `https://api.themoviedb.org/3/movie/${movieID}?&api_key=cfe422613b250f702980a3bbf9e90716`
     this.fetchApi(url)
-  } // end function
+  }
 
   componentDidMount() {
     let url = `https://api.themoviedb.org/3/movie/${this.state.movieID}?&api_key=cfe422613b250f702980a3bbf9e90716`
@@ -95,9 +94,8 @@ class App extends Component {
     }.bind(this)); // END Instantiate the Typeahead UI
     //========================= END TYPEAHEAD ==============================//
 
-  } // end component did mount function
+  }
 
-  // } // END CLASS - APP
 }
 //module.exports = App;
 export default App;

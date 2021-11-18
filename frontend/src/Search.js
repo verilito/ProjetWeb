@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
+import './search.css';
 const TMDBLogo = "./images/tmdb.svg";
 
 class Search extends Component {
@@ -16,7 +16,6 @@ class Search extends Component {
                             title="ReactJS TMDb Movie Search"
                             onclick="ga('send', 'event', 'link', 'internal', 'TMDB logo')"
                         >
-                            <img src={TMDBLogo} className="logo" alt="The Movie Database" />
                         </a>
                     </div>
                     <div className="col-xs-12 col-sm-6 col-lg-7">

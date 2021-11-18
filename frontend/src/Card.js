@@ -8,8 +8,6 @@ class Card extends Component {
         let data = this.props.data
         // if movie ID found, then...
 
-
-
         let posterIMG = 'https://image.tmdb.org/t/p/w500' + data.poster,
             production = data.production,
             productionCountries = data.production_countries,
@@ -20,7 +18,6 @@ class Card extends Component {
             noData = '-',
             genresList = nestedDataToString(genres);
         backdropIMG = 'https://image.tmdb.org/t/p/original' + data.backdrop;
-
 
 
         // conditional statements for no data

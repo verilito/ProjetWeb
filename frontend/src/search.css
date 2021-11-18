@@ -1,0 +1,57 @@
+.search-container {
+  margin: 30px 0;
+}
+  .searchbox label {
+   
+      width: 100%;
+      position: relative;
+  }
+      label:before {
+        color: midGrey;
+        content: "\f4a4";
+        font-family: Ionicons;
+        position: absolute;
+        font-weight: lighter;
+        bottom: 2px;
+        left: 0;
+        font-size: 22px;
+      
+    }
+
+    .twitter-typeahead,
+    .typeahead {
+      width: 100%; 
+      background: none;
+      border-bottom: solid 1px white;
+    }
+      .form-control {
+        animation: fadein ease-in 0.5s;
+        border: none;
+      }
+
+      .tt-input {
+        color: white;
+      }
+
+
+.tt-dropdown-menu {
+  animation: fadein ease-out 0.5s;
+  min-width: 100%;
+  margin-top: 2px;
+  padding: 5px 0;
+  background: rgba(0, 0, 0, 0.85);
+  border-radius: 4px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  background-clip: padding-box;
+  color: lightGrey;
+}
+
+.tt-suggestion {
+  padding: 3px 20px;
+  font-size: 18px;
+  line-height: 24px;
+}
+  p {
+    margin: 5px 0; 
+  }
+ 
