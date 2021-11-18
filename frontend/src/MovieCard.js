@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from "react";
 // import * as moment from 'moment';
 let numeral = require("numeral");
 

@@ -35,19 +35,19 @@ class MovieInformation extends Component {
   render() {
     return (
       <div>
-      <form onSubmit= { this.handleSubmit } >
-      <label>
-      <input
+        <form onSubmit={this.handleSubmit} >
+          <label>
+            <input
               type="text"
-    value = { this.state.query }
-    onChange = { this.handleChange }
-    placeholder = "Search movie title"
-      />
-      </label>
-      < input type = "submit" value = "Search" />
+              value={this.state.query}
+              onChange={this.handleChange}
+              placeholder="Search movie title"
+            />
+          </label>
+          < input type="submit" value="Search" />
         </form>
-        < MovieCard movie = { this.state.movie } />
-          </div>
+        < MovieCard movie={this.state.movie} />
+      </div>
     );
   }
 

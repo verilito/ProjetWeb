@@ -1,6 +1,6 @@
 import React from "react";
-import MovieInformation from "MovieInformation";
-import "./Styles/App.css";
+import MovieInformation from "./MovieInformation";
+import "./App.css";
 
 function InitialComponent() {
     return (
