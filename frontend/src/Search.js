@@ -1,31 +1,52 @@
 import React, { Component } from "react";
-import './search.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
-class Search extends Component {
-    handleChange(event) {
-        event.target.select();
+const apiKey = "6f8f5ded34fa534314a23fa7d705681b";
+// TODO: For future development, this will replace the search bar inside the MovieInformation component
+class SearchBar extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { movie: {}, query: null };
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
+
+    fetchMovie(title) {
+        fetch(
+            `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${title}`
+        )
+            .then(response => response.json())
+            .then(myJson => this.setState({ movie: myJson.results[0] }));
+    }
+
+    handleChange(event) {
+        this.setState({ query: event.target.value });
+        console.log(this.state.query);
+    }
+
+    handleSubmit(event) {
+        // alert('A name was submitted: ' + this.state.query);
+        this.fetchMovie(this.state.query);
+        event.preventDefault();
+    }
+
     render() {
         return (
-            <div className="col-xs-12 search-container">
-                <div className="row">
-                    <div className="col-xs-12 col-sm-6">
-                        <form className="searchbox">
-                            <input
-                                ref="search suggestion"
-                                onClick={this.handleChange}
-                                className="typeahead form-control"
-                                type="text"
-                                placeholder="Search Movie Title..."
-                                id="q"
-                            />
-
-                        </form>
-                    </div>
-                </div>
+            <div>
+                <form onSubmit={this.handleSubmit}>
+                    <label>
+                        Search for Movie:
+                        <input
+                            type="text"
+                            value={this.state.query}
+                            onChange={this.handleChange}
+                        />
+                    </label>
+                    <input type="submit" value="Search" />
+                </form>
             </div>
         );
     }
 }
+
 export default Search;
