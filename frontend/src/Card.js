@@ -66,7 +66,6 @@ class Card extends Component {
     }
 }
 
-
 function nestedDataToString(nestedData) {
     let nestedArray = [],
         resultString;

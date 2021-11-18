@@ -7,25 +7,16 @@ class Search extends Component {
     }
     render() {
         return (
-            <div className="col-xs-12 search-container nopadding">
+            <div className="col-xs-12 search-container">
                 <div className="row">
-                    <div className="col-xs-12 col-sm-6 col-lg-5">
-                        <a
-                            href="./"
-                            title="ReactJS TMDb Movie Search"
-                        >
-                        </a>
-                    </div>
                     <div className="col-xs-12 col-sm-6 col-lg-7">
                         <form className="searchbox">
-
                             <input
                                 ref="search suggestion"
                                 onClick={this.handleChange}
                                 className="typeahead form-control"
                                 type="text"
                                 placeholder="Search Movie Title..."
-                            // id="q"
                             />
 
                         </form>
