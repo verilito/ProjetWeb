@@ -18,6 +18,7 @@ class Search extends Component {
                                 className="typeahead form-control"
                                 type="text"
                                 placeholder="Search Movie Title..."
+                                id="q"
                             />
 
                         </form>

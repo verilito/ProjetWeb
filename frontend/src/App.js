@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Search from './Search';
 import Card from './Card';
 import $ from 'jquery';
-import "typeahead.js";
+//import "typeahead.js";
 
 class App extends Component {
   constructor(props) {
@@ -55,7 +55,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const Bloodhound = require('bloodhound-js');
+    var Bloodhound = require('bloodhound-js');
     let url = `https://api.themoviedb.org/3/movie/${this.state.movieID}?&api_key=cfe422613b250f702980a3bbf9e90716`
     this.fetchApi(url)
 
@@ -86,6 +86,7 @@ class App extends Component {
 
     //========================= TYPEAHEAD ==============================//
     // Instantiate the Typeahead UI
+
     $('.typeahead').typeahead({
       hint: true,
       highlight: true,

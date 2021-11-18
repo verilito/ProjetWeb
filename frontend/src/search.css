@@ -1,5 +1,7 @@
+
 .search-container {
   margin: 40px 0;
+  padding:0;
 }
   .searchbox {
       width: 20%;
@@ -34,6 +36,10 @@
     font-size: 18px;
     line-height: 24px;
 
+    }
+    @keyframes fadein {
+        from { opacity: 0; transform:translateY(10px)}
+        to   { opacity: 1; transform:translateY(0)}
     }
     .form-control {
         animation: fadein ease-in 0.5s;
