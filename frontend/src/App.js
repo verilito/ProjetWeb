@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import SearchBox from './Search';
 import Card from './Card';
 import $ from 'jquery';
+import * as jquery from 'jquery';
+import * as typeahead from 'typeahead.js';
+
 
 class App extends Component {
   constructor(props) {
@@ -84,6 +87,7 @@ class App extends Component {
 
     //========================= TYPEAHEAD ==============================//
     // Instantiate the Typeahead UI
+    var typeahead = require('typeahead-js');
     $('.typeahead').typeahead({
       hint: true,
       highlight: true,
