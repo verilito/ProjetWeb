@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import './search.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Search extends Component {
     handleChange(event) {
@@ -9,7 +10,7 @@ class Search extends Component {
         return (
             <div className="col-xs-12 search-container">
                 <div className="row">
-                    <div className="col-xs-12 col-sm-6 col-lg-7">
+                    <div className="col-xs-12 col-sm-6">
                         <form className="searchbox">
                             <input
                                 ref="search suggestion"

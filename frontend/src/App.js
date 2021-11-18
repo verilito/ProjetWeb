@@ -55,12 +55,13 @@ class App extends Component {
   }
 
   componentDidMount() {
+    const Bloodhound = require('bloodhound-js');
     let url = `https://api.themoviedb.org/3/movie/${this.state.movieID}?&api_key=cfe422613b250f702980a3bbf9e90716`
     this.fetchApi(url)
 
     //========================= BLOODHOUND ==============================//
-    const Bloodhound = require('bloodhound-js');
-    let suggests = new Bloodhound({
+
+    var suggests = new Bloodhound({
       datumTokenizer: function (datum) {
         return Bloodhound.tokenizers.whitespace(datum.value);
       },
