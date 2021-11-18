@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/typeahead": "^0.11.32",
     "react": "^16.11.0",
     "react-bootstrap-typeahead": "^6.0.0-alpha.4",
     "react-dom": "^16.11.0",
