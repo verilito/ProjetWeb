@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import './search.css';
-const TMDBLogo = "./images/tmdb.svg";
 
 class Search extends Component {
     handleChange(event) {
@@ -14,22 +13,21 @@ class Search extends Component {
                         <a
                             href="./"
                             title="ReactJS TMDb Movie Search"
-                            onclick="ga('send', 'event', 'link', 'internal', 'TMDB logo')"
                         >
                         </a>
                     </div>
                     <div className="col-xs-12 col-sm-6 col-lg-7">
                         <form className="searchbox">
-                            {/* <label> */}
+
                             <input
                                 ref="search suggestion"
                                 onClick={this.handleChange}
-                                className="searchbox__input typeahead form-control"
+                                className="typeahead form-control"
                                 type="text"
                                 placeholder="Search Movie Title..."
-                                id="q"
+                            // id="q"
                             />
-                            {/* </label> */}
+
                         </form>
                     </div>
                 </div>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SearchBox from './Search';
+import Search from './Search';
 import Card from './Card';
 import $ from 'jquery';
 import "typeahead.js";
@@ -9,19 +9,19 @@ class App extends Component {
     super(props)
 
     this.state = {
-      movieID: 157336 // set initital load movie - Interstellar
+      movieID: 157336 // set initital load movie named Interstellar
     }
   }
   render() {
     return (
       <div>
-        <SearchBox fetchMovieID={this.fetchMovieID.bind(this)} />
+        <Search fetchMovieID={this.fetchMovieID.bind(this)} />
         <Card data={this.state} />
       </div>
     )
-  } // END render
+  }
 
-  // the api request function
+  // Api request function
   fetchApi(url) {
 
     fetch(url).then((res) => res.json()).then((data) => {
@@ -59,7 +59,7 @@ class App extends Component {
     this.fetchApi(url)
 
     //========================= BLOODHOUND ==============================//
-    var Bloodhound = require('bloodhound-js');
+    const Bloodhound = require('bloodhound-js');
     let suggests = new Bloodhound({
       datumTokenizer: function (datum) {
         return Bloodhound.tokenizers.whitespace(datum.value);

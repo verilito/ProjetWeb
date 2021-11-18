@@ -36,9 +36,6 @@ class Card extends Component {
         if (data.poster == null) {
             posterIMG = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSols5HZxlQWyS9JY5d3_L9imbk0LiziHiyDtMZLHt_UNzoYUXs2g';
         }
-
-
-
         return (
             <div className="col-xs-12 cardcont nopadding">
 
