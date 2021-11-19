@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Titre from "./Titre";
 // import * as moment from 'moment';
 let numeral = require("numeral");
 
@@ -16,6 +17,8 @@ class MovieCard extends Component {
             genresList = nestedDataToString(genres);
         backdropImg = "https://image.tmdb.org/t/p/original" + data.backdrop_path;
 
+        let title = data.original_title;
+
 
         console.log("data is: " + JSON.stringify(data));
 
@@ -27,7 +30,7 @@ class MovieCard extends Component {
         return (
             <div className="col-xs-12 nopadding modal-dialog-centered">
                 <div className="meta-data-container col-xs-12 col-md-8 push-md-4 col-lg-7 push-lg-5 card">
-                    <h1 className="card-header">{data.original_title}</h1>
+                    <Titre value={title} />
 
                     <span className="tagline">{data.tagline}</span>
                     <p>{data.overview}</p>
