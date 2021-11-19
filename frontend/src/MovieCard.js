@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Titre from "./Titre";
+import Widget from "./Widget";
 // import * as moment from 'moment';
 let numeral = require("numeral");
 
@@ -11,13 +11,13 @@ let backdropImg;
 class MovieCard extends Component {
     render() {
         let data = this.props.movie;
+        var budget = parseInt(data.budget);
 
         let posterIMG = moviePosterBaseUrl + data.poster_path,
             genres = data.genre_ids,
             genresList = nestedDataToString(genres);
-        backdropImg = "https://image.tmdb.org/t/p/original" + data.backdrop_path;
+        //backdropImg = "https://image.tmdb.org/t/p/original" + data.backdrop_path;
 
-        let title = data.original_title;
 
 
         console.log("data is: " + JSON.stringify(data));
@@ -30,23 +30,43 @@ class MovieCard extends Component {
         return (
             <div className="col-xs-12 nopadding modal-dialog-centered">
                 <div className="meta-data-container col-xs-12 col-md-8 push-md-4 col-lg-7 push-lg-5 card">
-                    <Titre value={title} />
+                    <Widget value={data.original_title} />
+
+                    <div className="row nopadding release-details">
+                        <div className="col-sm-6">
+                            {" "}
+                            Genre:{" "}
+                            <Widget value={genresList} />
+                        </div>
+                    </div>
 
                     <span className="tagline">{data.tagline}</span>
                     <p>{data.overview}</p>
                     <div className="additional-details">
                         <div className="row nopadding release-details">
+
                             <div className="col-sm-6">
                                 {" "}
                                 Original Release:{" "}
-                                <span className="meta-data">{data.release_date}</span>
+                                <Widget value={data.release_date} />
                             </div>
+
                             <div className="col-sm-6">
                                 {" "}
                                 Vote Average:{" "}
-                                <span className="meta-data">
-                                    {data.vote_average ? data.vote_average : "N/A"}
-                                </span>
+                                <Widget value={data.vote_average ? data.vote_average : "N/A"} />
+                            </div>
+
+                            <div className="col-sm-6">
+                                {" "}
+                                Productions:{" "}
+                                <Widget value={data.productions} />
+                            </div>
+
+                            <div className="col-sm-6">
+                                {" "}
+                                Budget:{" "}
+                                <Widget value={data.budget} />
                             </div>
                         </div>
                     </div>

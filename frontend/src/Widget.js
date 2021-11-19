@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Titre extends Component {
+class Widget extends Component {
     constructor(props) {
         super(props);
         this.state = { titre: {} };
@@ -14,4 +14,4 @@ class Titre extends Component {
 }
 
 
-export default Titre;
+export default Widget;
