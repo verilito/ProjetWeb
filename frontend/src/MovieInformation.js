@@ -15,6 +15,7 @@ class MovieInformation extends Component {
 
   fetchMovie(title) {
     fetch(
+      //'https://api.themoviedb.org/3/movie/${movieID}?&api_key=cfe422613b250f702980a3bbf9e90716'
       `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${title}`
     )
       .then(response => response.json())
