@@ -16,6 +16,7 @@ class MovieCard extends Component {
             genresList = nestedDataToString(genres);
         backdropImg = "https://image.tmdb.org/t/p/original" + data.backdrop_path;
 
+
         console.log("data is: " + JSON.stringify(data));
 
         if (data.poster_path === null) {
