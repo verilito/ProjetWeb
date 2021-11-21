@@ -32,51 +32,52 @@ class MovieCard extends Component {
 
         return (
             <div className="row-xs-12 nopadding modal-dialog-centered">
-
-                <div className="meta-data-container col-xs-12 col-md-8 push-md-4 col-lg-7 push-lg-5 card">
-                    <Titre value={data.original_title} />
-
-                    <div className="row nopadding release-details">
-                        <div className="col-sm-6">
-                            {" "}
-                            Genre:{" "}
-                            <Widget value={genresList} />
-                        </div>
+                <div className="col-xs-12 nopadding modal-dialog-centered">
+                    <div className="poster-container nopadding col-xs-12 col-md-4 pull-md-8 col-lg-2 pull-lg-7 ">
+                        <img
+                            id="postertest"
+                            className="img-thumbnail"
+                            src={posterIMG}
+                            alt="Poster"
+                        />
                     </div>
 
-                    <span className="tagline">{data.tagline}</span>
-                    <p>{data.overview}</p>
-                    <div className="additional-details">
+                    <div className="meta-data-container col-xs-12 col-md-8 push-md-4 col-lg-10 push-lg-5 card">
+                        <Titre value={data.original_title} />
+
                         <div className="row nopadding release-details">
-
-                            <DateSortie value={data.release_date} />
-
-                            <VoteAverage value={data.vote_average ? data.vote_average : "N/A"} />
-
                             <div className="col-sm-6">
                                 {" "}
-                                Productions:{" "}
-                                <Widget value={data.productions} />
+                                Genre:{" "}
+                                <Widget value={genresList} />
                             </div>
+                        </div>
 
-                            <div className="col-sm-6">
-                                {" "}
-                                Budget:{" "}
-                                <Widget value={data.budget} />
+                        <span className="tagline">{data.tagline}</span>
+                        <p>{data.overview}</p>
+                        <div className="additional-details">
+                            <div className="row nopadding release-details">
+
+                                <DateSortie value={data.release_date} />
+
+                                <VoteAverage value={data.vote_average ? data.vote_average : "N/A"} />
+
+                                <div className="col-sm-6">
+                                    {" "}
+                                    Productions:{" "}
+                                    <Widget value={data.productions} />
+                                </div>
+
+                                <div className="col-sm-6">
+                                    {" "}
+                                    Budget:{" "}
+                                    <Widget value={data.budget} />
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div className="poster-container nopadding col-xs-12 col-md-4 pull-md-8 col-lg-5 pull-lg-7 ">
-                    <img
-                        id="postertest"
-                        className="img-thumbnail"
-                        src={posterIMG}
-                        alt="Poster"
-                    />
                 </div>
-
             </div>
         );
     }
