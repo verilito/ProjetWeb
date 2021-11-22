@@ -35,6 +35,7 @@ class MovieInformation extends Component {
   render() {
     return (
       <div>
+        <h1>Movie App </h1>
         <form onSubmit={this.handleSubmit} >
           <label>
             <input
@@ -44,7 +45,7 @@ class MovieInformation extends Component {
               placeholder="Search movie title"
             />
           </label>
-          < input type="submit" value="Search" />
+          <input type="image" id="image" alt="Search" height="30px" width="30px" src="/images/search.png" />
         </form>
         < MovieCard movie={this.state.movie} />
       </div>
@@ -52,7 +53,7 @@ class MovieInformation extends Component {
   }
 
   componentDidMount() {
-    this.fetchMovie("Forrest Gump");
+    this.fetchMovie("Titanic");
   }
 }
 

@@ -3,7 +3,7 @@ import Widget from "./Widget";
 import Titre from "./Titre";
 import DateSortie from "./DateSortie";
 import VoteAverage from "./VoteAverage";
-// import * as moment from 'moment';
+import { ContainerTitle, ContainerSynopsis, ContainerDate, ContainerVote, ContainerPoster } from "./Dashboard.js";
 let numeral = require("numeral");
 
 const TMDBLogo =
@@ -31,53 +31,26 @@ class MovieCard extends Component {
         }
 
         return (
-            <div className="row-xs-12 nopadding modal-dialog-centered">
-
-                <div className="meta-data-container col-xs-12 col-md-8 push-md-4 col-lg-7 push-lg-5 card">
-                    <Titre value={data.original_title} />
-
-                    <div className="row nopadding release-details">
-                        <div className="col-sm-6">
-                            {" "}
-                            Genre:{" "}
-                            <Widget value={genresList} />
-                        </div>
-                    </div>
-
-                    <span className="tagline">{data.tagline}</span>
-                    <p>{data.overview}</p>
-                    <div className="additional-details">
-                        <div className="row nopadding release-details">
-
-                            <DateSortie value={data.release_date} />
-
-                            <VoteAverage value={data.vote_average ? data.vote_average : "N/A"} />
-
-                            <div className="col-sm-6">
-                                {" "}
-                                Productions:{" "}
-                                <Widget value={data.productions} />
-                            </div>
-
-                            <div className="col-sm-6">
-                                {" "}
-                                Budget:{" "}
-                                <Widget value={data.budget} />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="poster-container nopadding col-xs-12 col-md-4 pull-md-8 col-lg-5 pull-lg-7 ">
+            <div>
+                <ContainerPoster>
                     <img
                         id="postertest"
                         className="img-thumbnail"
                         src={posterIMG}
                         alt="Poster"
                     />
-                </div>
+                </ContainerPoster >
+                <ContainerTitle> <Titre value={data.original_title} /> </ContainerTitle>
 
-            </div>
+                < ContainerSynopsis> <p>{data.overview}</p></ContainerSynopsis>
+
+                <ContainerDate>  <DateSortie value={data.release_date} /></ContainerDate>
+
+                <ContainerVote>   <VoteAverage value={data.vote_average ? data.vote_average : "N/A"} /> </ContainerVote>
+
+
+            </div >
+
         );
     }
 
