@@ -14,20 +14,14 @@ let backdropImg;
 class MovieCard extends Component {
     render() {
         let data = this.props.movie;
-        var budget = parseInt(data.budget);
 
-        let posterIMG = moviePosterBaseUrl + data.poster_path,
-            genres = data.genre_ids,
-            genresList = nestedDataToString(genres);
-        //backdropImg = "https://image.tmdb.org/t/p/original" + data.backdrop_path;
-
-
+        let posterIMG = data.Poster;
 
         console.log("data is: " + JSON.stringify(data));
 
-        if (data.poster_path === null) {
+        if (data.Poster === null) {
             posterIMG =
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSols5HZxlQWyS9JY5d3_L9imbk0LiziHiyDtMZLHt_UNzoYUXs2g";
+                "https://m.media-amazon.com/images/M/MV5BMTQzNDUwODk5NF5BMl5BanBnXkFtZTgwNzA0MDQ2NTE@._V1_SX300.jpg";
         }
 
         return (
@@ -40,13 +34,13 @@ class MovieCard extends Component {
                         alt="Poster"
                     />
                 </ContainerPoster >
-                <ContainerTitle> <Titre value={data.original_title} /> </ContainerTitle>
+                <ContainerTitle> <Titre value={data.Title} /> </ContainerTitle>
 
-                < ContainerSynopsis> <p>{data.overview}</p></ContainerSynopsis>
+                < ContainerSynopsis> <p>{data.Plot}</p></ContainerSynopsis>
 
-                <ContainerDate>  <DateSortie value={data.release_date} /></ContainerDate>
+                <ContainerDate>  <DateSortie value={data.Released} /></ContainerDate>
 
-                <ContainerVote>   <VoteAverage value={data.vote_average ? data.vote_average : "N/A"} /> </ContainerVote>
+                <ContainerVote>   <VoteAverage value={data.Actors} /> </ContainerVote>
 
 
             </div >

@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import MovieCard from "./MovieCard";
 
-const apiKey = "6f8f5ded34fa534314a23fa7d705681b";
+//const apiKey = "6f8f5ded34fa534314a23fa7d705681b";
+const apiKey = "a0a96d32";
 
 class MovieInformation extends Component {
   constructor(props) {
@@ -14,11 +15,11 @@ class MovieInformation extends Component {
 
   fetchMovie(title) {
     fetch(
-      //'https://api.themoviedb.org/3/movie/${movieID}?&api_key=cfe422613b250f702980a3bbf9e90716'
-      `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${title}`
+      // `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${title}`
+      `http://www.omdbapi.com?&apikey=${apiKey}&t=${title}`
     )
       .then(response => response.json())
-      .then(myJson => this.setState({ movie: myJson.results[0] }));
+      .then(myJson => this.setState({ movie: myJson })); //movie: myJson.Search[0] 
   }
 
   handleChange(event) {
