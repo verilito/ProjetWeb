@@ -4,7 +4,6 @@ import Titre from "./Titre";
 import DateSortie from "./DateSortie";
 import VoteAverage from "./VoteAverage";
 import { ContainerTitle, ContainerSynopsis, ContainerDate, ContainerVote, ContainerPoster } from "./Dashboard.js";
-let numeral = require("numeral");
 
 const TMDBLogo =
     "https://www.themoviedb.org/assets/2/v4/logos/312x276-primary-green-74212f6247252a023be0f02a5a45794925c3689117da9d20ffe47742a665c518.png";
