@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import MovieCard from "./MovieCard";
 
+
 //const apiKey = "6f8f5ded34fa534314a23fa7d705681b";
 const apiKey = "a0a96d32";
 
