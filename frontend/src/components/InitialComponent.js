@@ -8,7 +8,7 @@ function InitialComponent() {
     return (
         <div className="App">
 
-            <MonProfil />
+            <MovieInformation />
         </div>
     );
 }
