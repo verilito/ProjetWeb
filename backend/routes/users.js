@@ -2,13 +2,13 @@ var express = require('express');
 var router = express.Router();
 
 let datas = [{
-  id_film: "Titanic",
+  title_film: "Titanic",
 }];
 
 /* GET users listing. */
 router.get('/', function (req, res) {
   const { id } = req.params;
-  const user = _.find(users, ["id_film", id]);
+  const user = _.find(users, ["title_film", id]);
   res.status(200).json({ datas });
 });
 
@@ -33,7 +33,7 @@ router.post('/', function (req, res) {
 
 router.delete('/:id_film', function (req, res) {
   const { id } = req.params;
-  _.remove(users, ["id_film", id]);
+  _.remove(users, ["title_film", id]);
   userToUpdate.datas = user;
   res.json({
     message: 'Just removed'
