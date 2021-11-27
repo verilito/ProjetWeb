@@ -1,13 +1,9 @@
 import React, { Component } from "react";
-import Genre from "./Genre";
-import Synopsis from "./Synopsis";
 import Duree from "./Duree";
 import Titre from "./Titre";
 import DateSortie from "./DateSortie";
-import Awards from "./Awards";
-import BoxOffice from "./BoxOffice";
+import VoteAverage from "./VoteAverage";
 import { ContainerTitle, ContainerSynopsis, ContainerDate, ContainerVote, ContainerPoster } from "./Dashboard.js";
-import Synospsis from "./Synopsis";
 
 
 const TMDBLogo =
@@ -30,27 +26,23 @@ class MovieCard extends Component {
 
         return (
             <div>
+                <ContainerPoster>
+                    <img
+                        id="postertest"
+                        className="img-thumbnail"
+                        src={posterIMG}
+                        alt="Poster"
+                    />
+                </ContainerPoster >
+                <ContainerTitle> <Titre value={data.Title} /> </ContainerTitle>
 
-                <img
-                    id="postertest"
-                    className="img-thumbnail"
-                    src={posterIMG}
-                    alt="Poster"
-                />
+                < ContainerSynopsis> <p>{data.Plot}</p></ContainerSynopsis>
 
-                <Titre value={data.Title} />
+                <ContainerDate>  <DateSortie value={data.Released} /></ContainerDate>
 
-                <Genre value={data.Genre} />
-
-                <DateSortie value={data.Released} />
+                <ContainerVote>  <VoteAverage value={data.Actors} /> </ContainerVote>
 
                 <Duree value={data.Runtime} />
-
-                <Synopsis value={data.Plot} />
-
-                <BoxOffice value={data.BoxOffice} />
-
-                <Awards value={data.Awards} />
 
 
             </div >

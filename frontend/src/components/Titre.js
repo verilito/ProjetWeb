@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 
+
 class Titre extends Component {
     constructor(props) {
         super(props);
@@ -9,7 +10,7 @@ class Titre extends Component {
 
     render() {
         return (
-            <p>{this.props.value}</p>
+            <h1 id='titre_film'>{this.props.value}</h1>
         );
     }
 }

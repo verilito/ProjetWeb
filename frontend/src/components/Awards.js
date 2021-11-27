@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 
-class VoteAverage extends Component {
+class Awards extends Component {
     constructor(props) {
         super(props);
         this.state = { date: {} };
@@ -11,7 +11,7 @@ class VoteAverage extends Component {
         return (
             <div className="col-sm-6" >
                 {" "}
-                Original Release:{" "}
+                <p className='titre_widget'>Awards:{" "} </p>
                 {this.props.value}
 
             </div>
@@ -20,5 +20,4 @@ class VoteAverage extends Component {
     }
 }
 
-
-export default VoteAverage;
+export default Awards;

@@ -1,17 +1,19 @@
 import React, { Component } from "react";
 
-class DateSortie extends Component {
+
+class Synopsis extends Component {
     constructor(props) {
         super(props);
-        this.state = { date: {} };
+        this.state = { duree: {} };
     }
 
     render() {
         return (
-            <div className="col-sm-6">
+            <div className="col-sm-6" >
                 {" "}
-                <p className='titre_widget'>Date de sortie:{" "} </p>
+                <p className='titre_widget'>Synopsis:{" "} </p>
                 {this.props.value}
+
             </div>
 
         );
@@ -19,4 +21,4 @@ class DateSortie extends Component {
 }
 
 
-export default DateSortie;
+export default Synopsis;
