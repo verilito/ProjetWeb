@@ -37,7 +37,7 @@ class MovieInformation extends Component {
   render() {
     return (
       <div>
-        <h1>Movie App </h1>
+        <h1>Dernier Film Ajouté </h1>
         <form onSubmit={this.handleSubmit} >
           <label>
             <input

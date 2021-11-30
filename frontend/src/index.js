@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/index.css';
-import AppRoute from './AppRoute';
+import AppCopy from './AppCopy';
 import * as serviceWorker from './components/serviceWorker';
 
-ReactDOM.render(<AppRoute />, document.getElementById('root'));
+ReactDOM.render(<AppCopy />, document.getElementById('root'));
 
 
 

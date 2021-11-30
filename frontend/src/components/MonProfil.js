@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import DernierFilmAdd from "./DernierFilmAdd";
 import Navigation from "./Navigation";
+import MovieCard from "./MovieCard";
 
 //const apiKey = "6f8f5ded34fa534314a23fa7d705681b";
 const apiKey = "a0a96d32";
@@ -34,10 +35,11 @@ class MovieInformation extends Component {
         event.preventDefault();
     }
 
+
     render() {
         return (
             <div>
-                <Navigation />
+
                 <h1>Mon Profil </h1>
                 <form onSubmit={this.handleSubmit} >
                     <label>
@@ -50,7 +52,9 @@ class MovieInformation extends Component {
                     </label>
                     <input type="image" id="image" alt="Search" height="30px" width="30px" src="/images/search.png" />
                 </form>
-                <DernierFilmAdd movie={this.state.movie} />
+                <div id='dernierFilmAdd'>
+                    < DernierFilmAdd movie={this.state.movie} />
+                </div>
             </div>
         );
     }

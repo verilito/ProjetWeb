@@ -8,7 +8,7 @@ class Widget extends Component {
 
     render() {
         return (
-            <p>{this.props.value}</p>
+            <p className='information'>{this.props.value}</p>
         );
     }
 }

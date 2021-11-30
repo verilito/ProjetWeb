@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Genre from "./Genre";
+import Widget from "./Widget";
 import Synopsis from "./Synopsis";
 import Duree from "./Duree";
 import Titre from "./Titre";
@@ -29,28 +30,59 @@ class MovieCard extends Component {
         }
 
         return (
-            <div>
+            <div id='tout'>
 
-                <img
-                    id="postertest"
-                    className="img-thumbnail"
-                    src={posterIMG}
-                    alt="Poster"
-                />
+                <div class="flex-container-row">
+                    <div>
+                        <img
+                            id="postertest"
+                            className="img-thumbnail"
+                            src={posterIMG}
+                            alt="Poster"
+                        />
+                    </div>
 
-                <Titre value={data.Title} />
+                    <div id='gauche'>
+                        <Titre value={data.Title} />
 
-                <Genre value={data.Genre} />
+                        <div class="flex-container-column">
+                            <p className='titre_widget'>Genre:{" "} </p>
+                            <Widget value={data.Genre} />
+                        </div>
 
-                <DateSortie value={data.Released} />
+                        <div class="flex-container-row-wrap">
 
-                <Duree value={data.Runtime} />
+                            <div class="flex-container-column">
+                                <p className='titre_widget'>Date Sortie:{" "}</p>
+                                <Widget value={data.Released} />
+                            </div>
 
-                <Synopsis value={data.Plot} />
+                            <div class="flex-container-column">
+                                <p className='titre_widget'>Durée: {" "} </p>
+                                <Widget value={data.Runtime} />
+                            </div>
 
-                <BoxOffice value={data.BoxOffice} />
+                            <div class="flex-container-column">
+                                <p className='titre_widget'>Synopsis: {" "} </p>
+                                <Widget value={data.Plot} />
+                            </div>
 
-                <Awards value={data.Awards} />
+                            <div class="flex-container-column">
+                                <p className='titre_widget'>Box-Office: {" "} </p>
+                                <Widget value={data.BoxOffice} />
+                            </div>
+
+                            <div class="flex-container-column">
+                                <p className='titre_widget'>Awards: {" "} </p>
+                                <Widget value={data.Awards} />
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+                </div>
 
 
             </div >

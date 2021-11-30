@@ -5,12 +5,13 @@ import Navigation from "./Navigation";
 
 //import "./styles/app.css";
 // <MovieInformation />
+// <Navigation />
 function InitialComponent() {
     return (
         <div className="App">
-            <Navigation />
 
-            <MovieInformation />
+
+            <MonProfil />
         </div>
     );
 }
