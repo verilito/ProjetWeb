@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import MovieCard from "./MovieCard";
-
+import Navigation from "./Navigation";
 
 //const apiKey = "6f8f5ded34fa534314a23fa7d705681b";
 const apiKey = "a0a96d32";
@@ -23,39 +23,19 @@ class MovieInformation extends Component {
       .then(myJson => this.setState({ movie: myJson })); //movie: myJson.Search[0] 
   }
 
-  handleChange(event) {
-    this.setState({ query: event.target.value });
-    console.log(this.state.query);
-  }
-
-  handleSubmit(event) {
-    // alert('A name was submitted: ' + this.state.query);
-    this.fetchMovie(this.state.query);
-    event.preventDefault();
-  }
-
   render() {
     return (
       <div>
-        <h1>Dernier Film Ajouté </h1>
-        <form onSubmit={this.handleSubmit} >
-          <label>
-            <input
-              type="text"
-              value={this.state.query}
-              onChange={this.handleChange}
-              placeholder="Search movie title"
-            />
-          </label>
-          <input type="image" id="image" alt="Search" height="30px" width="30px" src="/images/search.png" />
-        </form>
+        <Navigation />
+        <h1>Movie Informations </h1>
         < MovieCard movie={this.state.movie} />
       </div>
     );
   }
 
   componentDidMount() {
-    this.fetchMovie("Titanic");
+    //this.fetchMovie("Titanic");
+    this.fetchMovie();
   }
 }
 

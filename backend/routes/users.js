@@ -1,43 +1,61 @@
 var express = require('express');
 var router = express.Router();
+var Users_models = require('../Models/Users_models');
 
-let datas = [{
-  title_film: "Titanic",
-}];
-
-/* GET users listing. */
-router.get('/', function (req, res) {
-  const { id } = req.params;
-  const user = _.find(users, ["title_film", id]);
-  res.status(200).json({ datas });
+//GET BACK ALL THE USERS
+router.get('/', async (req, res) => {
+  try {
+    const users = await Users_models.find();
+    res.json(users);
+  } catch (err) {
+    res.json({ message: err });
+  }
 });
 
-router.put('/', function (req, res) {
-  const { user } = req.body;
-  const id = _.uniqueId();
-  users.push({ user, id });
-  res.json({
-    datas: { datas, id }
+//SUBMIT A USER
+
+router.post('/', async (req, res) => {
+  const user = new Users_models({
+    favori: req.body.favori,
+    title: req.body.title,
+    note: req.body.note,
+    genre: req.body.genre,
   });
+  try {
+    const savedUsers = await user.save();
+    res.json(savedUsers);
+  } catch (err) {
+    res.json({ message: err });
+  }
 });
 
-router.post('/', function (req, res) {
-  const id = req.params;
-  const { user } = req.body;
-  const userToUpdate = _.find(users, ["id", id]);
-  userToUpdate.datas = user;
-  res.json({
-    message: 'Just updated'
-  });
+//SPECIFIC movie
+router.get('/:postId', async (req, res) => {
+  try {
+    const user = await Users_models.findById(req.params.postId);
+    res.json(user);
+  } catch (err) {
+    res.json({ message: err });
+  }
 });
 
-router.delete('/:id_film', function (req, res) {
-  const { id } = req.params;
-  _.remove(users, ["title_film", id]);
-  userToUpdate.datas = user;
-  res.json({
-    message: 'Just removed'
-  });
+//DELETE USER
+router.delete('/:postId', async (req, res) => {
+  try {
+    const removedPost = await Users_models.remove({ _id: req.params.postId });
+    res.json(removedPost);
+  } catch (err) {
+    res.json({ message: err });
+  }
 });
 
+//UPDATE AN USER
+router.patch('/:postId', async (req, res) => {
+  try {
+    const updatedPost = await Users_models.updateOne({ _id: req.params.postId }, { $set: { title: req.body.title } });
+    res.json(updatedPost);
+  } catch (err) {
+    res.json({ message: err });
+  }
+});
 module.exports = router;

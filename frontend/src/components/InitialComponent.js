@@ -1,17 +1,18 @@
 import React from "react";
-import MovieInformation from "./MovieInformation";
-import MonProfil from "./MonProfil";
+import InfosMovie from "./InfosMovie";
+import Affiche from "./Affiche";
 import Navigation from "./Navigation";
+import MaNote from "./MaNote";
+import Favoris from "./Favoris";
 
-//import "./styles/app.css";
-// <MovieInformation />
-// <Navigation />
 function InitialComponent() {
     return (
         <div className="App">
-
-
-            <MonProfil />
+            <Navigation />
+            <MaNote />
+            <Affiche />
+            <InfosMovie />
+            <Favoris />
         </div>
     );
 }

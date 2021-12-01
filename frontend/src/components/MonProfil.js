@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import DernierFilmAdd from "./DernierFilmAdd";
 import Navigation from "./Navigation";
-import MovieCard from "./MovieCard";
 
 //const apiKey = "6f8f5ded34fa534314a23fa7d705681b";
 const apiKey = "a0a96d32";
 
-class MovieInformation extends Component {
+class MonProfil extends Component {
     constructor(props) {
         super(props);
         this.state = { movie: {}, query: null };
@@ -39,7 +38,7 @@ class MovieInformation extends Component {
     render() {
         return (
             <div>
-
+                <Navigation />
                 <h1>Mon Profil </h1>
                 <form onSubmit={this.handleSubmit} >
                     <label>
@@ -64,4 +63,4 @@ class MovieInformation extends Component {
     }
 }
 
-export default MovieInformation;
+export default MonProfil;

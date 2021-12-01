@@ -1,14 +1,7 @@
 import React, { Component } from "react";
-import Genre from "./Genre";
 import Widget from "./Widget";
-import Synopsis from "./Synopsis";
-import Duree from "./Duree";
 import Titre from "./Titre";
-import DateSortie from "./DateSortie";
-import Awards from "./Awards";
-import BoxOffice from "./BoxOffice";
 import { ContainerTitle, ContainerSynopsis, ContainerDate, ContainerVote, ContainerPoster } from "./Dashboard.js";
-import Synospsis from "./Synopsis";
 
 
 const TMDBLogo =
