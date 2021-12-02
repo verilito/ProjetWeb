@@ -4,6 +4,7 @@ import Affiche from "./Affiche";
 import Navigation from "./Navigation";
 import MaNote from "./MaNote";
 import Favoris from "./Favoris";
+import NombreFilms from "./NombreFilms";
 
 function InitialComponent() {
     return (
@@ -13,6 +14,7 @@ function InitialComponent() {
             <Affiche />
             <InfosMovie />
             <Favoris />
+            <NombreFilms />
         </div>
     );
 }

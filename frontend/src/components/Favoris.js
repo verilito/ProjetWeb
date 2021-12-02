@@ -22,13 +22,17 @@ class Favoris extends Component {
     }
 
     componentDidMount() {
-        fetch(`http://localhost:5000/users/`)
-            .then((response) => response.json())
+        fetch(`http://localhost:5000/users/countMovies`)
+            .then((response1 => response1.json()))
             .then((jsonResponse) => {
-                this.setState({ favoris: jsonResponse[0].favori }
-                )
-            }).catch(error => console.log('Error with Favoris! ' + error.message))
-
+                const indice = Number(jsonResponse) - 1;
+                fetch(`http://localhost:5000/users/`)
+                    .then((response) => response.json())
+                    .then((jsonResponse) => {
+                        this.setState({ favoris: jsonResponse[indice].favori }
+                        )
+                    }).catch(error => console.log('Error with Favoris! ' + error.message))
+            }).catch(error => console.log('Error! ' + error.message))
     }
 
 }

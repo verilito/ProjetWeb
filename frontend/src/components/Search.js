@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-const apiKey = "6f8f5ded34fa534314a23fa7d705681b";
+const apiKey = "f676c67a";
 // TODO: For future development, this will replace the search bar inside the MovieInformation component
 class SearchBar extends Component {
     constructor(props) {

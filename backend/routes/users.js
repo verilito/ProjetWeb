@@ -5,6 +5,7 @@ var Users_models = require('../Models/Users_models');
 //GET BACK ALL THE USERS
 router.get('/', async (req, res) => {
   try {
+    //const users = await Users_models.find();
     const users = await Users_models.find();
     res.json(users);
   } catch (err) {
@@ -12,9 +13,17 @@ router.get('/', async (req, res) => {
   }
 });
 
-//SUBMIT A USER
+router.get('/countMovies', async (req, res) => {
+  try {
+    const users = await Users_models.countDocuments();
+    res.json(users);
+  } catch (err) {
+    res.json({ message: err });
+  }
+});
 
-router.post('/', async (req, res) => {
+//SUBMIT A USER
+router.post('/createMovie', async (req, res) => {
   const user = new Users_models({
     favori: req.body.favori,
     title: req.body.title,
@@ -28,6 +37,7 @@ router.post('/', async (req, res) => {
     res.json({ message: err });
   }
 });
+
 
 //SPECIFIC movie
 router.get('/:postId', async (req, res) => {

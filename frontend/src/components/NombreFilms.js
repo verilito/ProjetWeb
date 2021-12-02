@@ -17,10 +17,10 @@ class NombreFilms extends Component {
     }
 
     componentDidMount() {
-        fetch(`http://localhost:5000/users/`)
+        fetch(`http://localhost:5000/users/countMovies`)
             .then((response) => response.json())
             .then((jsonResponse) => {
-                this.setState({ nombreFilms: jsonResponse[0].note })
+                this.setState({ nombreFilms: jsonResponse })
             }).catch(error => console.log('Error! ' + error.message))
 
     }
