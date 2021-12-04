@@ -1,0 +1,72 @@
+body{
+    font-family: Montserrat;
+    color: #353E6C;
+    background: #E5E5E5;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-decoration: underline;
+  }
+
+  header{
+      text-align: center;
+  }
+  
+  
+  p{
+  font-style: normal;
+  font-weight: 500;
+  /*font-size: 22px;*/
+  }
+  
+  .boite{
+  filter: drop-shadow(0px 15px 40px rgba(222, 222, 222, 0.1));
+  border-radius: 30px;
+  background-color: white;
+  padding: 2em;
+  margin: 2em;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  }
+
+  .mesFilms{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+  }
+
+  .film{
+    background: #F4F5F7;
+    border-radius: 30px;
+    padding: 2em;
+  }
+
+  .affiche img{
+      height: 10em;
+  }
+
+  .favoris_supprimer_sauvegarder{
+      display: block;
+      justify-content: space-evenly;
+  }
+
+  .favoris_supprimer_sauvegarder img{
+      height: 30px;
+      width: 30px;
+  }
+
+  .infosFilm{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+  }
+  
+  

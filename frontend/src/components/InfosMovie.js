@@ -19,12 +19,12 @@ class InfosMovie extends Component {
 
         return (
             <div>
-                <h2>{title}</h2>
-                <h2>{genre}</h2>
-                <h2>Date de sortie: {released}</h2>
-                <h2>Directeur: {director}</h2>
-                <h2>Box-office: {boxOffice}</h2>
-                <h2>Synopsis: {plot}</h2>
+                <h2 class="titre_genre">{title}</h2>
+                <h2 class="titre_genre">{genre}</h2>
+                <h3><span>Date de sortie:</span> {released}</h3>
+                <h3><span>Directeur:</span>  {director}</h3>
+                <h3><span>Box-office:</span>  {boxOffice}</h3>
+                <h3><span>Synopsis:</span>  {plot}</h3>
             </div>
         );
     }

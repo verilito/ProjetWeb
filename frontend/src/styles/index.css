@@ -87,26 +87,4 @@ font-size: 2.25em;
   border-radius: 30px;
 }
 
-.information{
-  display: flex;
-  flex-wrap: wrap;
-}
-
-#gauche {
-  display: block;
-  justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#dernierFilmAdd{
-  background-color: aquamarine;
-  width: 25em;
-}
-
-
-#tout{
-  background-color: #FFFFFF;
-}
-
 

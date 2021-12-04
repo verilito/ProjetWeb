@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import MovieCard from "./MovieCard";
 import Navigation from "./Navigation";
 
-//const apiKey = "6f8f5ded34fa534314a23fa7d705681b";
 const apiKey = "f676c67a";
 
 class MovieInformation extends Component {

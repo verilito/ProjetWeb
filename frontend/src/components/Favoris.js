@@ -12,11 +12,10 @@ class Favoris extends Component {
         //let updateBoolNumber = Number(data);
         return (
             <div>
-                <h1>Favoris</h1>
                 {data ? (
-                    <img className="coeur" src='../images/coeurnoir.png' alt="Favori" />
+                    <img className="coeur" src='../images/coeur_rempli.png' alt="Favori" />
 
-                ) : <img className="coeur" src='../images/coeurblanc.png' alt="Non Favori" />}
+                ) : <img className="coeur" src='../images/coeur_vide.png' alt="Non Favori" />}
             </div>
         );
     }

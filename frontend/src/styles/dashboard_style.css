@@ -1,0 +1,140 @@
+body{
+  font-family: Montserrat;
+  color: #353E6C;
+  background: #E5E5E5;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  text-decoration: underline;
+}
+
+
+p{
+font-style: normal;
+font-weight: 500;
+/*font-size: 22px;*/
+}
+
+.boite{
+filter: drop-shadow(0px 15px 40px rgba(222, 222, 222, 0.1));
+border-radius: 30px;
+background-color: white;
+padding: 2em;
+margin: 2em;
+justify-content: center;
+align-items: center;
+text-align: center;
+}
+
+
+#dashboard{
+  display: flex;
+  flex-direction: row;
+  /*flex-wrap: wrap; */
+}
+
+@media (max-width: 800px) {
+  #dashboard {
+    flex-direction: column;
+  }
+}
+
+#partieGauche{
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+}
+
+#affiches{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+#mesFavoris img{
+  height: 15em;
+}
+
+#notesParGenre img{
+  width: 20em;
+}
+
+#dernierFilmAdd{
+  width: 80%;
+}
+
+#dernierFilmAdd h1 {
+font-style: italic;
+/*font-size: 72px;*/
+letter-spacing: 0.5px;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+#infosDernierFilmAdd{
+  display: flex;
+  flex-direction: row;
+}
+
+
+
+
+#infosFilm{
+/*font-size: 22px;*/
+width: 30%;
+}
+
+#infosFilm h1{
+  font-style: italic;
+  font-weight: 275;
+  /*font-size: 72px;*/
+  letter-spacing: 0.5px;
+}
+
+#infosFilm h2{
+  font-style: normal;
+  font-weight: bold;
+  /*font-size: 48px;*/
+}
+
+#infosFilm h3 span{
+  text-decoration: underline;
+}
+
+#favoris_note{
+  display: flex;
+  flex-direction: row;
+}
+
+#favoris_note_affiche{
+  display: flex;
+  flex-direction: column;
+}
+
+#favoris h2{
+  font-style: normal;
+font-weight: bold;
+/*font-size: 20px;*/
+}
+
+#favoris, #note{
+  width: 20%;
+}
+
+
+#affiche{
+  align-items: center;
+  justify-content: center;
+  margin-left: 2em;
+}
+
+#affiche img{
+  width: 20em;
+}

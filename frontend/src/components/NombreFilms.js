@@ -10,7 +10,6 @@ class NombreFilms extends Component {
         let data = this.state.nombreFilms;
         return (
             <div>
-                <h1>Nombre de films vus</h1>
                 <h2>{data}</h2>
             </div>
         );

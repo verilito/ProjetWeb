@@ -10,7 +10,6 @@ class MaNote extends Component {
         let data = this.state.note;
         return (
             <div>
-                <h1>Ma note</h1>
                 <h2>{data}</h2>
             </div>
         );
