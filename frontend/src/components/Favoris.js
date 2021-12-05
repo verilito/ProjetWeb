@@ -9,7 +9,6 @@ class Favoris extends Component {
     render() {
         let data = this.state.favoris;
         console.log(data);
-        //let updateBoolNumber = Number(data);
         return (
             <div>
                 {data ? (

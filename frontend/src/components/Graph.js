@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
-const note = 9;
 
 const data = [
     {
@@ -10,26 +9,32 @@ const data = [
     },
     {
         name: 'Thriller',
-        moyenne: note,
+        moyenne: 9,
     },
     {
         name: 'Romance',
         moyenne: 7.4,
     },
-    {
+    /*{
         name: 'Horror',
         moyenne: 8,
-    },
+    },*/
 ];
 
-export default class Graph extends PureComponent {
+class Graph extends PureComponent {
+    /*  constructor() {
+          super();
+          this.state = { datas: [], note: [] };
+      } */
 
     render() {
+        // let note = this.state.note;
         return (
             <ResponsiveContainer width="100%" aspect={2}>
                 <BarChart
                     width={500}
                     height={300}
+
                     data={data}
                     margin={{
                         top: 5,
@@ -47,4 +52,24 @@ export default class Graph extends PureComponent {
             </ResponsiveContainer>
         );
     }
+    /* componentDidMount() {
+         fetch(`http://localhost:5000/users/countMovies`)
+             .then((response1 => response1.json()))
+             .then((jsonResponse) => {
+                 const indice = Number(jsonResponse) - 1;
+                 fetch(`http://localhost:5000/users/`)
+                     .then(response => response.json())
+                     .then((myJson) => {
+ 
+                         //  for (var i = 0; i < indice + 1; i++) {
+                         this.setState({ note: myJson.note });
+                         //  console.log(myJson[i].note)
+                         // this.setState.datas.map(myJson => (<li key={myJson.note}>{myJson._id}</li>))
+                         // }
+                     })
+                     .catch(error => console.log('Error! ' + error.message))
+             }).catch(error => console.log('Error! ' + error.message))
+     } */
+
 }
+export default Graph;

@@ -1,34 +1,45 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+const apiKey = "f676c67a";
+
 function AddFilm() {
     const [input, setInput] = useState({
         favori: '',
         title: '',
-        note: '',
-        genre: ''
+        note: ''
     })
 
     function handleChange(event) {
         const { name, value } = event.target;
-
         setInput(prevInput => {
             return {
                 ...prevInput,
                 [name]: value
             }
-        })
+        }
+        )
+
     }
 
     function handleClick(event) {
         event.preventDefault();
-        const newMovie = {
-            favori: input.favori,
-            title: input.title,
-            note: input.note,
-            genre: input.note
-        }
-        axios.post('http://localhost:5000/users/createMovie', newMovie)
+
+        fetch(`http://www.omdbapi.com?&apikey=${apiKey}&t=${input.title}`)
+            .then(response => response.json())
+            .then((myJson) => {
+                const genreF = myJson.Genre;
+                const newMovie = {
+                    favori: input.favori,
+                    title: input.title,
+                    note: input.note,
+                    genre: genreF
+                }
+                axios.post('http://localhost:5000/users/createMovie', newMovie)
+            })
+            .catch(error => console.log('Error! ' + error.message))
+
+
     }
     return (
         <div>
@@ -45,10 +56,8 @@ function AddFilm() {
                 <div className="form-group">
                     <input name="note" value={input.note} onChange={handleChange} className="form-control" placeholder="Add movie average"></input>
                 </div>
-                <div className="form-group">
-                    <input name="genre" value={input.genre} onChange={handleChange} className="form-control" placeholder="Add movie genre"></input>
-                </div>
-                <button onClick={handleClick} className="btn btn-lg-info">Add a movie</button>
+
+                <button onClick={handleClick} className="btn btn-lg-info">Ajouter un film</button>
             </form>
 
         </div>

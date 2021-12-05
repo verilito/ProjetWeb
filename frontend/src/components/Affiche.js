@@ -36,10 +36,6 @@ class Affiche extends Component {
 
     }
 
-
-
-
-
 }
 
 export default Affiche;

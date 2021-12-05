@@ -1,29 +1,22 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import '../styles/mon_profil_style.css';
 import axios from "axios";
 
 const apiKey = "f676c67a";
 
-class DeleteMovie extends Component {
-    constructor() {
-        super();
+class UpdateMovieBis extends Component {
+    constructor(props) {
+        super(props);
         this.state = { movie: {}, id: '' };
     }
 
     render() {
         let data = this.state.movie;
-        let idM = this.state.id;
-
-        function handleClick(event) {
-            event.preventDefault();
-            axios.delete('http://localhost:5000/users/' + idM)
-        }
+        let id = this.state.id;
 
         return (
             <div>
-                <h3>{data.Title}</h3>
-                <img className="poster" src={data.Poster} alt="Poster" />
-                <button onClick={handleClick} className="btn btn-lg-info">Supprimer le film</button>
+
             </div>
         );
     }
@@ -45,7 +38,6 @@ class DeleteMovie extends Component {
             }).catch(error => console.log('Error! ' + error.message))
     }
 
-
 }
 
-export default DeleteMovie;
+export default UpdateMovieBis;
