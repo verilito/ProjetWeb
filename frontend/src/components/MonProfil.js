@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Navigation from "./Navigation";
 import AddFilm from "./AddFilm";
 import DeleteMovie from "./DeleteMovie";
@@ -9,11 +9,11 @@ function MonProfil() {
     return (
         <div className="App">
 
-            <div className="bod">
+            <div className="body">
 
-                <nav>
+                <div id="navigation">
                     <Navigation />
-                </nav>
+                </div>
 
                 <header>
                     <h1>Mon profil</h1>
@@ -34,9 +34,7 @@ function MonProfil() {
                         <div className="mesFilms">
                             <div className="film">
                                 <div className="infosFilm">
-                                    <div className="affiche">
-                                        <DeleteMovie />
-                                    </div>
+                                    <DeleteMovie />
 
                                 </div>
                             </div>
@@ -44,22 +42,12 @@ function MonProfil() {
                     </article>
                     <article className="boite">
                         <header>
-                            <h2>Modifiez le dernier film ajouté</h2>
+                            <h2>Modifier le dernier film ajouté</h2>
                         </header>
                         <div className="mesFilms">
                             <div className="film">
                                 <div className="infosFilm">
-                                    <div className="affiche">
-                                        <UpdateMovie />
-                                    </div>
-
-                                    <div className="note">
-                                        <h4>Ma note</h4>
-                                        <p>10/10</p>
-                                        <button onclick="plus()">+</button>
-                                        <button onclick="moins()">-</button>
-                                    </div>
-
+                                    <UpdateMovie />
                                 </div>
                             </div>
                         </div>

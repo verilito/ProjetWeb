@@ -10,7 +10,7 @@ class MaNote extends Component {
         let data = this.state.note;
         return (
             <div>
-                <h2>{data}</h2>
+                <h2>{data}/5</h2>
             </div>
         );
     }

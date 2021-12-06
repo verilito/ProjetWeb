@@ -17,13 +17,15 @@ class DeleteMovie extends Component {
         function handleClick(event) {
             event.preventDefault();
             axios.delete('http://localhost:5000/users/' + idM)
+            window.location.reload(true)
         }
 
         return (
             <div>
-                <h3>{data.Title}</h3>
-                <img className="poster" src={data.Poster} alt="Poster" />
-                <button onClick={handleClick} className="btn btn-lg-info">Supprimer le film</button>
+                <h3>Titre: {data.Title}</h3>
+                <img className="poster" src={data.Poster} alt="Poster" height="160px" /> <br />
+                <button onClick={handleClick} className="btn btn-lg-info" className="boutonCrud"><img className="imageCrud" src='../images/trash.png' alt="Bouton SUPPRIMER" width="50px"
+                    height="50px" /></button>
             </div>
         );
     }

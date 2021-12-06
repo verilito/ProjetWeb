@@ -1,41 +1,44 @@
-import React, { PureComponent } from 'react';
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import React, { Component } from 'react';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
-
-const data = [
+const dataa = [
     {
-        name: 'Drama',
-        moyenne: 7.7,
+        genre: 'Drama',
+        note: 4,
     },
     {
-        name: 'Thriller',
-        moyenne: 9,
+        genre: 'Thriller',
+        note: 5,
     },
     {
-        name: 'Romance',
-        moyenne: 7.4,
+        genre: 'Action',
+        note: 4.8,
     },
-    /*{
-        name: 'Horror',
-        moyenne: 8,
-    },*/
 ];
 
-class Graph extends PureComponent {
-    /*  constructor() {
-          super();
-          this.state = { datas: [], note: [] };
-      } */
+
+class Graph extends Component {
+
+    constructor() {
+        super();
+        this.state = { data: [] };
+    }
 
     render() {
-        // let note = this.state.note;
+
+        const datas = this.state.data;
+        const infos = JSON.stringify(datas, ['genre', 'note']);
+        const test = JSON.parse(infos)
+
+        console.log(test);
+
         return (
             <ResponsiveContainer width="100%" aspect={2}>
                 <BarChart
                     width={500}
                     height={300}
 
-                    data={data}
+                    data={test}
                     margin={{
                         top: 5,
                         right: 30,
@@ -44,32 +47,23 @@ class Graph extends PureComponent {
                     }}
                 >
                     <CartesianGrid strokeDasharray="1 1" />
-                    <XAxis dataKey="name" />
+                    <XAxis dataKey="genre" />
                     <YAxis />
                     <Tooltip />
-                    <Bar dataKey="moyenne" fill="#3B3F88" />
+                    <Bar dataKey="note" fill="#3B3F88" />
                 </BarChart>
             </ResponsiveContainer>
         );
     }
-    /* componentDidMount() {
-         fetch(`http://localhost:5000/users/countMovies`)
-             .then((response1 => response1.json()))
-             .then((jsonResponse) => {
-                 const indice = Number(jsonResponse) - 1;
-                 fetch(`http://localhost:5000/users/`)
-                     .then(response => response.json())
-                     .then((myJson) => {
- 
-                         //  for (var i = 0; i < indice + 1; i++) {
-                         this.setState({ note: myJson.note });
-                         //  console.log(myJson[i].note)
-                         // this.setState.datas.map(myJson => (<li key={myJson.note}>{myJson._id}</li>))
-                         // }
-                     })
-                     .catch(error => console.log('Error! ' + error.message))
-             }).catch(error => console.log('Error! ' + error.message))
-     } */
+    componentDidMount() {
+        fetch(`http://localhost:5000/users/`)
+            .then(response => response.json())
+            .then((myJson) => {
+                this.setState({ data: myJson });
+
+            })
+            .catch(error => console.log('Error! ' + error.message))
+    }
 
 }
 export default Graph;

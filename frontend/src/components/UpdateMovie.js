@@ -7,7 +7,7 @@ const apiKey = "f676c67a";
 class UpdateMovie extends Component {
     constructor() {
         super();
-        this.state = { movie: {}, id: '', note: '' };
+        this.state = { movie: {}, id: '', note: [] };
         this.handleChange = this.handleChange.bind(this);
         this.handleClick = this.handleClick.bind(this);
     }
@@ -16,23 +16,35 @@ class UpdateMovie extends Component {
         event.preventDefault();
         let idF = this.state.id;
         axios.patch('http://localhost:5000/users/' + idF, { note: this.state.note });
-
+        window.location.reload(true);
     }
     handleChange(event) {
         this.setState({ note: event.target.value });
     }
     render() {
+        const enabled = this.state.note > 5 || this.state.note < 0
 
         return (
             <div>
-                <h3>{this.state.movie.Title}</h3>
+                <h3>Titre: {this.state.movie.Title}</h3>
 
-                <img className="poster" src={this.state.movie.Poster} alt="Poster" />
+
+                <img className="poster" src={this.state.movie.Poster} alt="Poster" height="160px" />
+                <h3>Note actuelle: {this.state.note}</h3>
                 <form>
-                    <div className="form-group">
-                        <input name="note" value={this.state.note} onChange={this.handleChange} className="form-control" placeholder="Entez une nouvelle note"></input>
-                    </div>
-                    <button onClick={this.handleClick} className="btn btn-lg-info">Modifiez le film</button>
+                    <fieldset>
+                        <legend>Nouvelle note</legend>
+                        <div className="form-group">
+                            <input type="radio" name="note" value="0" onChange={this.handleChange} className="form-control" /><label>0</label>
+                            <input type="radio" name="note" value="1" onChange={this.handleChange} className="form-control" /><label>1</label>
+                            <input type="radio" name="note" value="2" onChange={this.handleChange} className="form-control" /><label>2</label>
+                            <input type="radio" name="note" value="3" onChange={this.handleChange} className="form-control" /><label>3</label>
+                            <input type="radio" name="note" value="4" onChange={this.handleChange} className="form-control" /><label>4</label>
+                            <input type="radio" name="note" value="5" onChange={this.handleChange} className="form-control" /><label>5</label>
+
+                        </div>
+                    </fieldset>
+                    <button onClick={this.handleClick} disabled={enabled} className="btn btn-lg-info" className="boutonCrud"><img className="imageCrud" src='../images/save.png' alt="Bouton Ajoutez" /></button>
                 </form>
             </div>
         );
@@ -47,6 +59,8 @@ class UpdateMovie extends Component {
                     .then((response1) => response1.json())
                     .then((jsonResponse) => {
                         const titre = jsonResponse[indice].title;
+                        const noteF = jsonResponse[indice].note;
+                        this.setState({ note: noteF })
                         this.setState({ id: jsonResponse[indice]._id })
                         fetch(`http://www.omdbapi.com?&apikey=${apiKey}&t=${titre}`)
                             .then(response => response.json())

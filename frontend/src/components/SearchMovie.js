@@ -39,9 +39,10 @@ class SearchMovie extends Component {
                             value={this.state.query}
                             onChange={this.handleChange}
                             placeholder="Search movie title"
+                            id="barreRecherche"
                         />
                     </label>
-                    <input type="submit" value="Search" />
+                    <button type="submit" ><img src='../images/search.png' alt="Bouton Search" width="20px" height="20px" /></button>
                 </form>
                 <GetMovie movie={this.state.movie} />
             </div>
@@ -49,7 +50,7 @@ class SearchMovie extends Component {
     }
 
     componentDidMount() {
-        this.fetchMovie("Titanic");
+        this.fetchMovie("Aden");
     }
 }
 

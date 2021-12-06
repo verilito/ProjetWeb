@@ -8,13 +8,12 @@ class Favoris extends Component {
 
     render() {
         let data = this.state.favoris;
-        console.log(data);
         return (
             <div>
                 {data ? (
                     <img className="coeur" src='../images/coeur_rempli.png' alt="Favori" />
 
-                ) : <img className="coeur" src='../images/coeur_vide.png' alt="Non Favori" />}
+                ) : <img className="coeur" src='../images/broken_heart.png' alt="Non Favori" />}
             </div>
         );
     }

@@ -1,16 +1,20 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
+import '../styles/dashboard_style.css';
 
 const Navigation = () => {
     return (
-        <div className="navigation">
+        <div >
+
             <NavLink exact to="/">
-                Widgets
+                Dashboard
             </NavLink>
+
             <NavLink exact to="/monprofil">
                 Mon Profil
             </NavLink>
         </div>
+
     );
 };
 

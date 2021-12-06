@@ -9,6 +9,9 @@ function AddFilm() {
         title: '',
         note: ''
     })
+    const enabled =
+        input.title > 0 &&
+        input.note > -1 && input.favori != 0 && 1;
 
     function handleChange(event) {
         const { name, value } = event.target;
@@ -36,6 +39,7 @@ function AddFilm() {
                     genre: genreF
                 }
                 axios.post('http://localhost:5000/users/createMovie', newMovie)
+                window.location.reload(true)
             })
             .catch(error => console.log('Error! ' + error.message))
 
@@ -47,17 +51,35 @@ function AddFilm() {
                 <h2>Ajouter un film</h2>
             </header>
             <form>
-                <div className="form-group">
-                    <input name="favori" value={input.favori} onChange={handleChange} className="form-control" placeholder="Favori (1) or not(0)"></input>
-                </div>
-                <div className="form-group">
-                    <input name="title" value={input.title} onChange={handleChange} className="form-control" placeholder="Add movie title"></input>
-                </div>
-                <div className="form-group">
-                    <input name="note" value={input.note} onChange={handleChange} className="form-control" placeholder="Add movie average"></input>
-                </div>
+                <fieldset>
+                    <legend>Titre du film</legend>
+                    <div className="form-group">
+                        <input name="title" value={input.title} onChange={handleChange} className="form-control" placeholder="Entrez le titre du film"></input>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Note du film</legend>
+                    <div className="form-group">
 
-                <button onClick={handleClick} className="btn btn-lg-info">Ajouter un film</button>
+                        <input type="radio" name="note" value="0" onChange={handleChange} className="form-control" /><label>0</label>
+                        <input type="radio" name="note" value="1" onChange={handleChange} className="form-control" /><label>1</label>
+                        <input type="radio" name="note" value="2" onChange={handleChange} className="form-control" /><label>2</label>
+                        <input type="radio" name="note" value="3" onChange={handleChange} className="form-control" /><label>3</label>
+                        <input type="radio" name="note" value="4" onChange={handleChange} className="form-control" /><label>4</label>
+                        <input type="radio" name="note" value="5" onChange={handleChange} className="form-control" /><label>5</label>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Mettre en favori</legend>
+                    <div className="radio">
+
+                        <input type="radio" name="favori" value="1" onChange={handleChange} className="form-control" /><label> <img src='../images/coeur_rempli.png' alt="Favori" /></label>
+                        <input type="radio" name="favori" value="0" onChange={handleChange} className="form-control" placeholder="Favori (1) or not(0)" /><label> <img src='../images/broken_heart.png' alt="Non Favori" /></label>
+                    </div>
+                </fieldset>
+                <button disabled={enabled} onClick={handleClick} className="btn btn-lg-info" className="boutonupdate"><img src='../images/save.png' alt="Bouton Ajoutez" width="50px"
+                    height="50px" /></button>
+
             </form>
 
         </div>
