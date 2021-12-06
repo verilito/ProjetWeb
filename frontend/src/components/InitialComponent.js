@@ -13,10 +13,14 @@ import Graph from "./Graph";
 function InitialComponent() {
     return (
         <div id="bo">
-            <div id="navigation">
-                <Navigation />
-            </div>
+            <div id="tete">
 
+                <Navigation />
+
+
+                <h1 id="dash">Dashboard</h1>
+
+            </div>
             <main id="dashboard">
 
                 <aside id="partieGauche">

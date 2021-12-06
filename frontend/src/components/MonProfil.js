@@ -11,13 +11,10 @@ function MonProfil() {
 
             <div className="body">
 
-                <div id="navigation">
-                    <Navigation />
-                </div>
+                <Navigation />
 
-                <header>
-                    <h1>Mon profil</h1>
-                </header>
+                <h1 id="profil">Mon profil</h1>
+
 
                 <main id="profil">
 

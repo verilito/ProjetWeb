@@ -6,15 +6,20 @@
   flex-direction: column;
   width: 100%;
 }
+#tete{
+  background-color: gray;
+  height: 6em;
+}
 
-#navigation{
+#navi{
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
   font-family: Montserrat;
   font-style: normal;
   font-weight: bold;
   font-size: large;
+  margin-left: 4em;
+  margin-top: 0.5em;
 }
 
 p{
@@ -32,11 +37,15 @@ justify-content: center;
 align-items: center;
 text-align: center;
 }
-
+#dash{
+  margin-left: 20em;
+  margin-top: -1em;
+}
 
 #dashboard{
   display: flex;
   flex-direction: row;
+ 
   /*flex-wrap: wrap; */
 }
 
