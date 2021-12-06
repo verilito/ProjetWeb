@@ -18,7 +18,7 @@ function InitialComponent() {
                 <Navigation />
 
 
-                <h1 id="dash">Dashboard</h1>
+                <h1 id="dash">TuTeFaisDesFilms</h1>
 
             </div>
             <main id="dashboard">

@@ -6,10 +6,13 @@
   flex-direction: column;
   width: 100%;
 }
+/*
 #tete{
   background-color: gray;
   height: 6em;
-}
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, .1);
+} */
 
 #navi{
   display: flex;
@@ -38,7 +41,7 @@ align-items: center;
 text-align: center;
 }
 #dash{
-  margin-left: 20em;
+  text-align: center;
   margin-top: -1em;
 }
 
@@ -49,21 +52,22 @@ text-align: center;
   /*flex-wrap: wrap; */
 }
 
+
 @media (max-width: 800px) {
   #dashboard {
     flex-direction: column;
   }
   #infosDernierFilmAdd{
-    flex-direction: column;
+    display: block;
   }
   #dernierFilmAdd{
-    flex-direction: column;
+    display: block;
   }
   #favoris_note{
-    flex-direction: column;
+    display: block;
   }
   #favoris_note_affiche{
-    flex-direction: column;
+    display: block;
   }
 }
 
